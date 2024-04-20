@@ -1,4 +1,19 @@
-!pip install tensorflow
+import subprocess
+import sys
+
+# Check if TensorFlow is installed and install it if it's not already installed
+def install_tensorflow():
+    try:
+        import tensorflow as tf
+    except ImportError:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "tensorflow"])
+
+# Call the function to ensure TensorFlow is installed
+install_tensorflow()
+
+# Now you can safely import TensorFlow and other modules
+from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input, decode_predictions
+
 import streamlit as st
 from PIL import Image
 import numpy as np
