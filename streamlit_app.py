@@ -1,4 +1,4 @@
-pip install tensorflow
+!pip install tensorflow
 import streamlit as st
 from PIL import Image
 import numpy as np
